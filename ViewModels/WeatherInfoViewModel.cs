@@ -35,6 +35,7 @@ namespace WeatherApp.ViewModels
         [RelayCommand]
         private async Task FetchWeatherInformation()
         {
+            Console.WriteLine("inside the command");
             var weatherApiResponse =  await _weatherApiService.GetWeatherInformation(Latitude,Longitude);
             if(weatherDescription!=null)
             {

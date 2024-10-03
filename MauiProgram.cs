@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using WeatherApp.Pages;
 using WeatherApp.Services;
+using WeatherApp.ViewModels;
 
 namespace WeatherApp;
 
@@ -20,6 +22,7 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+builder.Services.AddSingleton<WeatherInfoViewModel>().AddSingleton<WeatherInfoPage>();
 
 		return builder.Build();
 	}
