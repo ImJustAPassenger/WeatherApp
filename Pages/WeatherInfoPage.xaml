@@ -5,35 +5,45 @@
              xmlns:vm="clr-namespace:WeatherApp.ViewModels"
              Title="WeatherInfoPage"
              BackgroundColor="#606cf2"
-             x:DataType="vm:WeatherInfoViewModel"
-             >
+             x:DataType="vm:WeatherInfoViewModel">
     <VerticalStackLayout>
         <Frame Margin="20">
             <Grid ColumnDefinitions="*,*,*">
-                <Entry Grid.Column="0"
+                <!--                 <Entry Grid.Column="0"
                        Placeholder="Lat"
                        Text="{Binding Latitude}"
-                       />
+                       /> -->
+                <Picker Grid.Column="0"
+                        ItemsSource="{Binding RegionList}"
+                        ItemDisplayBinding="{Binding Name}"
+                        Title="Region"
+                        SelectedIndexChanged="Picker_SelectedRegion">
+
+                </Picker>
+                <Picker Grid.Column="1"
+                    Title="City"
+                    ItemsSource="{Binding Region.Cities}"
+                    SelectedIndexChanged="Picker_SelectedCity"
+                    />
+                <!-- 
                 <Entry Grid.Column="1"
                        Placeholder="Lon"
-                       Text="{Binding Longitude}"/>
+                       Text="{Binding Longitude}"/> -->
                 <Button Grid.Column="2"
                         Text="Fetch"
-                        Command="{Binding FetchWeatherInformationCommand}"
-                        />
+                        Command="{Binding FetchWeatherInformationCommand}"/>
             </Grid>
         </Frame>
         <Image WidthRequest="100"
                HeightRequest="100"
-               Source="{Binding WeatherIcon}"
-               />
+               Source="{Binding WeatherIcon}"/>
         <Label
             Text="{Binding Temperature}"
             HorizontalOptions="Center"
             FontSize="70"
             TextColor="White"/>
         <Label
-            Text="{Binding WeatherDescription}"  
+            Text="{Binding WeatherDescription}"
             HorizontalOptions="Center"
             FontSize="25"
             TextColor="White"/>
@@ -71,12 +81,12 @@
             <Frame Grid.Column="2">
                 <VerticalStackLayout>
                     <Label Text="{Binding IsDay}"
-                            HorizontalOptions="Center"
-                            FontSize="30"
-                            FontAttributes="Bold"
-                            TextColor="#606cf2"/>
+                           HorizontalOptions="Center"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           TextColor="#606cf2"/>
                     <Label Text="is Day"
-                            HorizontalOptions="Center"/>
+                           HorizontalOptions="Center"/>
                 </VerticalStackLayout>
             </Frame>
         </Grid>

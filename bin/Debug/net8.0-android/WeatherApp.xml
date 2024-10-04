@@ -35,6 +35,15 @@
         <member name="P:WeatherApp.ViewModels.WeatherInfoViewModel.IsDay">
             <inheritdoc cref="F:WeatherApp.ViewModels.WeatherInfoViewModel.isDay"/>
         </member>
+        <member name="P:WeatherApp.ViewModels.WeatherInfoViewModel.RegionList">
+            <inheritdoc cref="F:WeatherApp.ViewModels.WeatherInfoViewModel._regionList"/>
+        </member>
+        <member name="P:WeatherApp.ViewModels.WeatherInfoViewModel.Region">
+            <inheritdoc cref="F:WeatherApp.ViewModels.WeatherInfoViewModel._region"/>
+        </member>
+        <member name="P:WeatherApp.ViewModels.WeatherInfoViewModel.City">
+            <inheritdoc cref="F:WeatherApp.ViewModels.WeatherInfoViewModel._city"/>
+        </member>
         <member name="F:WeatherApp.ViewModels.WeatherInfoViewModel.fetchWeatherInformationCommand">
             <summary>The backing field for <see cref="P:WeatherApp.ViewModels.WeatherInfoViewModel.FetchWeatherInformationCommand"/>.</summary>
         </member>
@@ -74,6 +83,15 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsDay">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsDay" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RegionList">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RegionList" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Region">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Region" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.City">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "City" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
@@ -106,6 +124,15 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsDay">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsDay" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RegionList">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RegionList" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Region">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Region" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.City">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "City" generated properties.</summary>
         </member>
         <member name="T:Refit.Implementation.Generated">
             <inheritdoc />
