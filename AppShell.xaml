@@ -5,11 +5,28 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:WeatherApp.Pages"
     Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="#6495ed"
+    Shell.TitleColor="#191970"
+    Shell.TabBarBackgroundColor="#6495ed"
+    Shell.TabBarTitleColor="#191970"
     Title="WeatherApp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate pages:WeatherInfoPage}"
-        Route="WeatherInfoPage" />
+   
+    <TabBar
+        FlyoutDisplayOptions="AsSingleItem">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate pages:WeatherInfoPage}"
+            Icon="weather.png"
+            Route="WeatherInfoPage"/>
+        <ShellContent
+            Title="Map"
+            Icon="map.png"
+            ContentTemplate="{DataTemplate pages:MapPage}"
+            Route="MapPage"/>
+
+
+    </TabBar>
+
 
 </Shell>

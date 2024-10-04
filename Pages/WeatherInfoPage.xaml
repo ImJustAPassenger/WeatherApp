@@ -5,18 +5,21 @@
              xmlns:vm="clr-namespace:WeatherApp.ViewModels"
              xmlns:controls="clr-namespace:WeatherApp.Controls"
              Title="WeatherInfoPage"
-             BackgroundColor="#6495ed"
+             BackgroundColor="#191970"
              x:DataType="vm:WeatherInfoViewModel"
-            
+             
              >
 
     <Grid RowDefinitions="Auto,Auto,*" RowSpacing="20">
         <controls:CurrentDateTimeControl Grid.Row="0"
                 Margin="15,0,0,0"/>
-        <Frame Grid.Row="1"
-                Margin="20">
-            <Grid ColumnDefinitions="*,*,*">
+        <Border Grid.Row="1"
+                Margin="20"  BackgroundColor="#606cf2" StrokeShape="RoundRectangle 15" StrokeThickness="0" Padding="10">
+            <Grid ColumnDefinitions="*,*,*" >
                 <Picker Grid.Column="0"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="14"
                         ItemsSource="{Binding RegionList}"
                         ItemDisplayBinding="{Binding Name}"
                         Title="Region"
@@ -25,20 +28,25 @@
                 </Picker>
                 <Picker Grid.Column="1"
                         Title="City"
+                        FontSize="14"
+                        
+                        FontAttributes="Bold"
+                        TextColor="White"
                         ItemsSource="{Binding Region.Cities}"
                         SelectedIndexChanged="Picker_SelectedCity"/>
 
                 <Button Grid.Column="2"
                         Text="Fetch"
-                        BackgroundColor="#606cf2"
+                        BackgroundColor="#6495ed"
                         Command="{Binding FetchWeatherInformationCommand}"/>
             </Grid>
-        </Frame>
-    <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="10">
-        <Grid Grid.Row="0"
+        </Border>
+    <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="10" >
+    <Border Grid.Row="0" BackgroundColor="#606cf2" StrokeShape="RoundRectangle 15" StrokeThickness="0" WidthRequest="250" Padding="10"> 
+        <Grid 
                 RowDefinitions="Auto,Auto,Auto,Auto">
 
-            <Image Grid.Row="0"
+            <Image Grid.Row="0" 
                     WidthRequest="100"
                    HeightRequest="100"
                    Source="{Binding WeatherIcon}"/>
@@ -58,44 +66,45 @@
                    FontSize="15"
                    TextColor="White"/>
         </Grid>
+    </Border>
         <Grid Grid.Row="1"
                 ColumnDefinitions="*,*,*" ColumnSpacing="2"
               Margin="20">
-            <Frame Grid.Column="0">
-                <VerticalStackLayout>
+            <Border Grid.Column="0" HeightRequest="100" BackgroundColor="#606cf2" StrokeShape="RoundRectangle 15" StrokeThickness="0"> 
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
                     <Label Text="{Binding Humidity}"
                            HorizontalOptions="Center"
                            FontSize="30"
                            FontAttributes="Bold"
-                           TextColor="#6495ed"/>
+                           TextColor="#191970"/>
                     <Label Text="Humidity"
                            HorizontalOptions="Center"/>
                 </VerticalStackLayout>
-            </Frame>
+            </Border>
 
-            <Frame Grid.Column="1">
-                <VerticalStackLayout>
+            <Border Grid.Column="1"  BackgroundColor="#606cf2" StrokeShape="RoundRectangle 15" StrokeThickness="0">
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
                     <Label Text="{Binding CloudCoverLevel}"
                            HorizontalOptions="Center"
                            FontSize="30"
                            FontAttributes="Bold"
-                           TextColor="#6495ed"/>
+                           TextColor="#191970"/>
                     <Label Text="Cloud"
                            HorizontalOptions="Center"/>
                 </VerticalStackLayout>
-            </Frame>
+            </Border>
 
-            <Frame Grid.Column="2">
-                <VerticalStackLayout>
+            <Border Grid.Column="2" BackgroundColor="#606cf2" StrokeShape="RoundRectangle 15" StrokeThickness="0">
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
                     <Label Text="{Binding IsDay}"
                            HorizontalOptions="Center"
                            FontSize="30"
                            FontAttributes="Bold"
-                           TextColor="#6495ed"/>
+                           TextColor="#191970"/>
                     <Label Text="is Day"
                            HorizontalOptions="Center"/>
                 </VerticalStackLayout>
-            </Frame>
+            </Border>
         </Grid>
 </Grid>
     </Grid>

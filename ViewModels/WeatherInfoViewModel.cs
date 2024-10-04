@@ -44,7 +44,7 @@ namespace WeatherApp.ViewModels
         private string _city;
 
         //your_api_key
-        private readonly string API_KEY = "fe2d2ac6a671422fbd2136dc1578dc83";
+        private readonly string API_KEY = "your_api_key";
 
         [RelayCommand]
         private async Task FetchWeatherInformation()

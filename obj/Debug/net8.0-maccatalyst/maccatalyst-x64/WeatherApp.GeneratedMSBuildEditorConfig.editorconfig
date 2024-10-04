@@ -36,6 +36,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = WeatherApp.Controls.Curren
 build_metadata.AdditionalFiles.TargetPath = Controls\CurrentDateTimeControl.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\CurrentDateTimeControl.xaml
 
+[F:/Giuseppe/lavori maui/WeatherApp/Pages/MapPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WeatherApp.Pages.MapPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\MapPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\MapPage.xaml
+
 [F:/Giuseppe/lavori maui/WeatherApp/Pages/WeatherInfoPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = WeatherApp.Pages.WeatherInfoPage.xaml
