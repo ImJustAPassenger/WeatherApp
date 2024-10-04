@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kb5siSFaDY0=",
+  "dgSpecHash": "iU6FK2oKTlA=",
   "success": true,
   "projectFilePath": "F:\\Giuseppe\\lavori maui\\WeatherApp\\WeatherApp.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,8 @@
     "C:\\Users\\giuseppe\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.7\\microsoft.net.illink.tasks.8.0.7.nupkg.sha512",
     "C:\\Users\\giuseppe\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\giuseppe\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240607001\\microsoft.windowsappsdk.1.5.240607001.nupkg.sha512",
+    "C:\\Users\\giuseppe\\.nuget\\packages\\refit\\7.2.1\\refit.7.2.1.nupkg.sha512",
+    "C:\\Users\\giuseppe\\.nuget\\packages\\refit.httpclientfactory\\7.2.1\\refit.httpclientfactory.7.2.1.nupkg.sha512",
     "C:\\Users\\giuseppe\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
     "C:\\Users\\giuseppe\\.nuget\\packages\\xamarin.android.glide\\4.15.1.2\\xamarin.android.glide.4.15.1.2.nupkg.sha512",
     "C:\\Users\\giuseppe\\.nuget\\packages\\xamarin.android.glide.annotations\\4.15.1.2\\xamarin.android.glide.annotations.4.15.1.2.nupkg.sha512",

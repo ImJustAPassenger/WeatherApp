@@ -107,5 +107,23 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsDay">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsDay" generated properties.</summary>
         </member>
+        <member name="T:Refit.Implementation.Generated">
+            <inheritdoc />
+        </member>
+        <member name="T:Refit.Implementation.Generated.WeatherAppServicesIWeatherApi">
+            <inheritdoc />
+        </member>
+        <member name="P:Refit.Implementation.Generated.WeatherAppServicesIWeatherApi.Client">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.WeatherAppServicesIWeatherApi.#ctor(System.Net.Http.HttpClient,Refit.IRequestBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.WeatherAppServicesIWeatherApi.GetCurrentAsync(System.String,System.String[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.WeatherAppServicesIWeatherApi.WeatherApp#Services#IWeatherApi#GetCurrentAsync(System.String,System.String[])">
+            <inheritdoc />
+        </member>
     </members>
 </doc>

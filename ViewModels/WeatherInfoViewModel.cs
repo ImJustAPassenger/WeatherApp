@@ -5,12 +5,11 @@ namespace WeatherApp.ViewModels
 {
     public partial class WeatherInfoViewModel : ObservableObject
     {
-        
-    private readonly WeatherApiService _weatherApiService;
-    public WeatherInfoViewModel(WeatherApiService weatherApiService)
-    {
-        _weatherApiService = weatherApiService;
-    }
+
+        public WeatherInfoViewModel(IWeatherApi weatherApi)
+        {
+            _weatherApi = weatherApi;
+        }
 
         [ObservableProperty]
         private string latitude;
@@ -32,22 +31,39 @@ namespace WeatherApp.ViewModels
 
         [ObservableProperty]
         private string isDay;
+        private readonly IWeatherApi _weatherApi;
+
+        private readonly string API_KEY = "fe2d2ac6a671422fbd2136dc1578dc83";
+
         [RelayCommand]
         private async Task FetchWeatherInformation()
         {
-            Console.WriteLine("inside the command");
-            var weatherApiResponse =  await _weatherApiService.GetWeatherInformation(Latitude,Longitude);
-            if(weatherDescription!=null)
+
+            try
             {
-                WeatherIcon= weatherApiResponse.current.weather_icons[0];
-                Temperature= $"{weatherApiResponse.current.temperature}°C";
-                Location =$"{weatherApiResponse.location.name},{weatherApiResponse.location.region  },{weatherApiResponse.location.country}";
-                WeatherDescription=weatherApiResponse.current.weather_descriptions[0];
-                Humidity =$"{weatherApiResponse.current.humidity}";
-                CloudCoverLevel= $"{weatherApiResponse.current.cloudcover}%";
-                IsDay = weatherApiResponse.current.is_day.ToUpper();
+                var response = await _weatherApi.GetCurrentAsync(API_KEY, [Latitude, Longitude]);
+                if (response != null)
+                {
+                    WeatherIcon = response.current.weather_icons[0];
+                    Temperature = $"{response.current.temperature}°C";
+                    Location = $"{response.location.name},{response.location.region},{response.location.country}";
+                    WeatherDescription = response.current.weather_descriptions[0];
+                    Humidity = $"{response.current.humidity}";
+                    CloudCoverLevel = $"{response.current.cloudcover}%";
+                    IsDay = response.current.is_day.ToUpper();
+                }
+                else
+                {
+                    await Shell.Current.DisplayAlert("error", "response is null", "ok");
+                }
             }
-         }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlert("error", ex.Message, "ok");
+            }
+            Console.WriteLine("inside the command");
+       
+        }
 
     }
 }
