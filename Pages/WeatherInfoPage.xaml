@@ -3,16 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApp.Pages.WeatherInfoPage"
              xmlns:vm="clr-namespace:WeatherApp.ViewModels"
+             xmlns:controls="clr-namespace:WeatherApp.Controls"
              Title="WeatherInfoPage"
-             BackgroundColor="#606cf2"
-             x:DataType="vm:WeatherInfoViewModel">
-    <VerticalStackLayout>
-        <Frame Margin="20">
+             BackgroundColor="#6495ed"
+             x:DataType="vm:WeatherInfoViewModel"
+            
+             >
+
+    <Grid RowDefinitions="Auto,Auto,*" RowSpacing="20">
+        <controls:CurrentDateTimeControl Grid.Row="0"
+                Margin="15,0,0,0"/>
+        <Frame Grid.Row="1"
+                Margin="20">
             <Grid ColumnDefinitions="*,*,*">
-                <!--                 <Entry Grid.Column="0"
-                       Placeholder="Lat"
-                       Text="{Binding Latitude}"
-                       /> -->
                 <Picker Grid.Column="0"
                         ItemsSource="{Binding RegionList}"
                         ItemDisplayBinding="{Binding Name}"
@@ -21,38 +24,42 @@
 
                 </Picker>
                 <Picker Grid.Column="1"
-                    Title="City"
-                    ItemsSource="{Binding Region.Cities}"
-                    SelectedIndexChanged="Picker_SelectedCity"
-                    />
-                <!-- 
-                <Entry Grid.Column="1"
-                       Placeholder="Lon"
-                       Text="{Binding Longitude}"/> -->
+                        Title="City"
+                        ItemsSource="{Binding Region.Cities}"
+                        SelectedIndexChanged="Picker_SelectedCity"/>
+
                 <Button Grid.Column="2"
                         Text="Fetch"
+                        BackgroundColor="#606cf2"
                         Command="{Binding FetchWeatherInformationCommand}"/>
             </Grid>
         </Frame>
-        <Image WidthRequest="100"
-               HeightRequest="100"
-               Source="{Binding WeatherIcon}"/>
-        <Label
-            Text="{Binding Temperature}"
-            HorizontalOptions="Center"
-            FontSize="70"
-            TextColor="White"/>
-        <Label
-            Text="{Binding WeatherDescription}"
-            HorizontalOptions="Center"
-            FontSize="25"
-            TextColor="White"/>
-        <Label
-            Text="{Binding Location}"
-            HorizontalOptions="Center"
-            FontSize="15"
-            TextColor="White"/>
-        <Grid ColumnDefinitions="*,*,*"
+    <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="10">
+        <Grid Grid.Row="0"
+                RowDefinitions="Auto,Auto,Auto,Auto">
+
+            <Image Grid.Row="0"
+                    WidthRequest="100"
+                   HeightRequest="100"
+                   Source="{Binding WeatherIcon}"/>
+            <Label Grid.Row="1"
+                   Text="{Binding Temperature}"
+                   HorizontalOptions="Center"
+                   FontSize="70"
+                   TextColor="White"/>
+            <Label Grid.Row="2"
+                   Text="{Binding WeatherDescription}"
+                   HorizontalOptions="Center"
+                   FontSize="25"
+                   TextColor="White"/>
+            <Label Grid.Row="3"
+                   Text="{Binding Location}"
+                   HorizontalOptions="Center"
+                   FontSize="15"
+                   TextColor="White"/>
+        </Grid>
+        <Grid Grid.Row="1"
+                ColumnDefinitions="*,*,*" ColumnSpacing="2"
               Margin="20">
             <Frame Grid.Column="0">
                 <VerticalStackLayout>
@@ -60,7 +67,7 @@
                            HorizontalOptions="Center"
                            FontSize="30"
                            FontAttributes="Bold"
-                           TextColor="#606cf2"/>
+                           TextColor="#6495ed"/>
                     <Label Text="Humidity"
                            HorizontalOptions="Center"/>
                 </VerticalStackLayout>
@@ -72,7 +79,7 @@
                            HorizontalOptions="Center"
                            FontSize="30"
                            FontAttributes="Bold"
-                           TextColor="#606cf2"/>
+                           TextColor="#6495ed"/>
                     <Label Text="Cloud"
                            HorizontalOptions="Center"/>
                 </VerticalStackLayout>
@@ -84,11 +91,12 @@
                            HorizontalOptions="Center"
                            FontSize="30"
                            FontAttributes="Bold"
-                           TextColor="#606cf2"/>
+                           TextColor="#6495ed"/>
                     <Label Text="is Day"
                            HorizontalOptions="Center"/>
                 </VerticalStackLayout>
             </Frame>
         </Grid>
-    </VerticalStackLayout>
+</Grid>
+    </Grid>
 </ContentPage>

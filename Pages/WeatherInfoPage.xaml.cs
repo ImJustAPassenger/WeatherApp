@@ -27,6 +27,8 @@ public partial class WeatherInfoPage : ContentPage
 
 		if (selectedIndex != -1)
 			_weatherInfoViewModel.Region = _weatherInfoViewModel.RegionList.FirstOrDefault(c=>c.Name== picker.Items[selectedIndex]);
+			
+			
 	}
 
     private void Picker_SelectedCity(object sender, EventArgs e)
