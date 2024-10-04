@@ -32,8 +32,8 @@ namespace WeatherApp.ViewModels
         [ObservableProperty]
         private string isDay;
         private readonly IWeatherApi _weatherApi;
-
-        private readonly string API_KEY = "fe2d2ac6a671422fbd2136dc1578dc83";
+//your_api_key
+        private readonly string API_KEY = "your_api_key";
 
         [RelayCommand]
         private async Task FetchWeatherInformation()
@@ -41,7 +41,7 @@ namespace WeatherApp.ViewModels
 
             try
             {
-                var response = await _weatherApi.GetCurrentAsync(API_KEY, [Latitude, Longitude]);
+                var response = await _weatherApi.GetCurrentAsync(API_KEY,$"{Latitude},{Longitude}");
                 if (response != null)
                 {
                     WeatherIcon = response.current.weather_icons[0];
