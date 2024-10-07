@@ -15,9 +15,9 @@ public partial class WeatherInfoPage : ContentPage
 	}
 
 
-	protected override void OnAppearing()
+	protected async override void OnAppearing()
 	{
-		_weatherInfoViewModel.Initialize();
+		await _weatherInfoViewModel.InitializeAsync();
 	}
 
 	private void Picker_SelectedRegion(object sender, EventArgs e)

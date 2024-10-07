@@ -15,7 +15,7 @@
     <TabBar
         FlyoutDisplayOptions="AsSingleItem">
         <ShellContent
-            Title="Home"
+            Title="Weather"
             ContentTemplate="{DataTemplate pages:WeatherInfoPage}"
             Icon="weather.png"
             Route="WeatherInfoPage"/>

@@ -44,11 +44,11 @@
         <member name="P:WeatherApp.ViewModels.WeatherInfoViewModel.City">
             <inheritdoc cref="F:WeatherApp.ViewModels.WeatherInfoViewModel._city"/>
         </member>
-        <member name="F:WeatherApp.ViewModels.WeatherInfoViewModel.fetchWeatherInformationCommand">
-            <summary>The backing field for <see cref="P:WeatherApp.ViewModels.WeatherInfoViewModel.FetchWeatherInformationCommand"/>.</summary>
+        <member name="F:WeatherApp.ViewModels.WeatherInfoViewModel.fetchFromLocationCommand">
+            <summary>The backing field for <see cref="P:WeatherApp.ViewModels.WeatherInfoViewModel.FetchFromLocationCommand"/>.</summary>
         </member>
-        <member name="P:WeatherApp.ViewModels.WeatherInfoViewModel.FetchWeatherInformationCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:WeatherApp.ViewModels.WeatherInfoViewModel.FetchWeatherInformation"/>.</summary>
+        <member name="P:WeatherApp.ViewModels.WeatherInfoViewModel.FetchFromLocationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:WeatherApp.ViewModels.WeatherInfoViewModel.FetchFromLocationAsync"/>.</summary>
         </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
             <summary>

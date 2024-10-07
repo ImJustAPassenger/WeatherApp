@@ -38,7 +38,7 @@
                 <Button Grid.Column="2"
                         Text="Fetch"
                         BackgroundColor="#6495ed"
-                        Command="{Binding FetchWeatherInformationCommand}"/>
+                        Command="{Binding FetchFromLocationCommand}"/>
             </Grid>
         </Border>
     <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="10" >

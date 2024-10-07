@@ -11,7 +11,9 @@
                      ColumnDefinitions="*,Auto"
                      >
               <controls:CurrentDateTimeControl Margin="15,0,0,0"/>
-          
+          <Button Grid.Column="1" Text="Get Current Weather "
+              Clicked="GetWeather_Clicked"
+              />
               <maps:Map Grid.Row="1"
                             Grid.ColumnSpan="2"
                             x:Name="myMap"

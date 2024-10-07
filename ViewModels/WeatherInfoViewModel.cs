@@ -40,28 +40,43 @@ namespace WeatherApp.ViewModels
 
         [ObservableProperty]
         private CountryModel _region;
-         [ObservableProperty]
+        [ObservableProperty]
         private string _city;
 
         //your_api_key
         private readonly string API_KEY = "your_api_key";
 
+
+
+
+
+
         [RelayCommand]
-        private async Task FetchWeatherInformation()
+        public async Task FetchFromLocationAsync()
+        {
+            var query = "";
+            if (string.IsNullOrWhiteSpace(City))
+            {
+                query = Region.Name;
+            }
+            else
+            {
+                query = $"{City},{Region.Name}";
+            }
+            await FetchWeatherInformation(query);
+        }
+        public async Task FetchFromCoordinateAsync()
+        {
+            var query = $"{Latitude},{Longitude}";
+            await FetchWeatherInformation(query);
+        }
+
+
+        private async Task FetchWeatherInformation(string query)
         {
 
             try
             {
-                var query="";
-                if(string.IsNullOrWhiteSpace(City))
-                {
-                    query = Region.Name;
-                }
-                else
-                {
-                    query= $"{City},{Region.Name}";
-                }
-                // var response = await _weatherApi.GetCurrentAsync(API_KEY,$"{Latitude},{Longitude}");
                 var response = await _weatherApi.GetCurrentAsync(API_KEY, $"{query}");
 
                 if (response != null)
@@ -85,11 +100,15 @@ namespace WeatherApp.ViewModels
             }
 
         }
+        private bool _isInitialize;
 
-
-        public void Initialize()
+        public async Task InitializeAsync()
         {
-            var regions = new Dictionary<string, List<string>>
+            if (_isInitialize) return;
+            try
+            {
+                _isInitialize = true;
+                var regions = new Dictionary<string, List<string>>
 {
     { "Abruzzo", new List<string> { "L'Aquila", "Pescara", "Chieti", "Teramo" } },
     { "Basilicata", new List<string> { "Potenza", "Matera" } },
@@ -112,14 +131,24 @@ namespace WeatherApp.ViewModels
     { "Valle D'Aosta", new List<string> { "Aosta" } },
     { "Veneto", new List<string> { "Venezia", "Verona", "Padova", "Vicenza", "Treviso", "Rovigo", "Belluno" } }
 };
-            var cList = regions.Select(region => new CountryModel
+                var cList = regions.Select(region => new CountryModel
+                {
+                    Name = region.Key,
+                    Cities = region.Value
+                }).ToList();
+                RegionList = cList;
+                Latitude = "37.55893666666667";
+                Longitude = "15.082153333333334";
+                await FetchFromCoordinateAsync();
+            }
+            catch
             {
-                Name = region.Key,
-                Cities = region.Value
-            }).ToList();
-        RegionList = cList;
-
+                _isInitialize = false;
+            }
         }
+
+
+
 
     }
 }
